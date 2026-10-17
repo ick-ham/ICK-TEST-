@@ -1,0 +1,17 @@
+# Netlify 설정 — 빌드 과정 없이 이 폴더를 그대로 공개합니다.
+[build]
+  publish = "."
+  command = ""
+
+# 누구나 접속 가능한 공개 페이지 (로그인·비밀번호 없음)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# 데이터 파일은 항상 최신본을 받도록 캐시하지 않음
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "no-cache"
